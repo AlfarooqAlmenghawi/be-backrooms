@@ -1,0 +1,43 @@
+{
+  "name": "be-backrooms",
+  "version": "1.0.0",
+  "description": "be-backrooms",
+  "main": "listen.js",
+  "scripts": {
+    "setup-dbs": "psql -f ./database/setup.sql",
+    "seed": "node ./database/seeding/run-seed.js",
+    "test": "jest",
+    "prepare": "husky install",
+    "nodemon": "NODE_ENV=production nodemon appfornodemon.js",
+    "start": "node listen.js",
+    "seed-production-database": "NODE_ENV=production npm run seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/northcoders/be-nc-news/issues"
+  },
+  "homepage": "https://github.com/northcoders/be-nc-news#readme",
+  "devDependencies": {
+    "husky": "^8.0.2",
+    "jest": "^27.5.1",
+    "jest-extended": "^2.0.0",
+    "pg-format": "^1.0.4"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.21.1",
+    "jest-sorted": "^1.0.15",
+    "nodemon": "^3.1.7",
+    "pg": "^8.7.3",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "jest-extended/all",
+      "jest-sorted"
+    ]
+  }
+}
